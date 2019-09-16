@@ -2,7 +2,7 @@
  * @Description: 创建数据库连接 Pool
  * @Author: your name
  * @Date: 2019-08-14 16:10:14
- * @LastEditTime: 2019-08-16 11:24:56
+ * @LastEditTime: 2019-09-16 14:16:50
  * @LastEditors: Please set LastEditors
  */
 const mysql = require('mysql')
@@ -38,12 +38,22 @@ export const poolFn = (connectQuery, statements, parameter) => {
 // 查询数据
 function connecQueryFind(connection, statements) {
   　　return new Promise((resolve, reject) => {
+      console.log(statements, 'statements')
   　　　　connection.query(statements, (err, result) => {
   　　　　　　if(err) {
   　　　　　　　　throw err;
   　　　　　　　　reject('查询失败');
   　　　　　　}
-  　　　　　　resolve(result);
+            const res = {};
+            if(result.length > 0) {
+              res.list = result;
+              res.success = 'true';
+              console.log(result, 'resule')
+            }else{
+              res.success = 'false'
+            }
+            resolve(res);
+            // result.success = 'true'
   　　　　});
   　　})
   }
