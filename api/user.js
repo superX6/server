@@ -2,7 +2,7 @@
  * @Description: api 写上具体的 SQL 语句
  * @Author: your name
  * @Date: 2019-08-14 17:40:56
- * @LastEditTime: 2019-09-16 14:20:32
+ * @LastEditTime: 2019-09-24 10:27:21
  * @LastEditors: Please set LastEditors
  */
 
@@ -22,7 +22,7 @@ export const register = async (ctx) => {
 
 export const login = async (ctx) => {
   const username = ctx.request.body.username;
-  console.log('need to find username: ' , username);
+  // console.log('need to find username: ' , username);
   const statement = `SELECT * FROM user2 WHERE username =  "${username}"`;
   await wantFindData(ctx, statement)
 }
