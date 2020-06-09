@@ -1,10 +1,3 @@
-/*
- * @Description: 创建数据库连接 Pool
- * @Author: your name
- * @Date: 2019-08-14 16:10:14
- * @LastEditTime: 2019-09-16 14:16:50
- * @LastEditors: Please set LastEditors
- */
 const mysql = require('mysql')
 
 const pool = mysql.createPool({
@@ -16,8 +9,7 @@ const pool = mysql.createPool({
 })
 
 
-/**
- * 
+/** * 
  * @param {String} connectQuery 增删改查的方法名
  * @param {String} statements sql query 语句
  * @param {String} parameter 

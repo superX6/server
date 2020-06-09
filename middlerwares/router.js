@@ -1,10 +1,3 @@
-/*
- * @Description: In User Settings Edit
- * @Author: your name
- * @Date: 2019-08-14 16:25:26
- * @LastEditTime: 2019-09-24 10:50:11
- * @LastEditors: Please set LastEditors
- */
 import Router from 'koa-router'
 import {findUser, register, login} from '../api/user'
 import {createArticle, findAllArticles} from '../api/article';

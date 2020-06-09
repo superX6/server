@@ -1,9 +1,4 @@
-/*
- * @Descripttion:   
- * @Author: xiancq
- * @Date: 2019-09-24 10:30:00
- * @LastEditTime: 2019-09-24 10:49:06
- */
+
 import {　wantFindData, wantAddData, wantDeleData, wantExitData} from '../lib/processData'
 
 export const createArticle = async (ctx) => {
@@ -12,6 +7,6 @@ export const createArticle = async (ctx) => {
 }
 
 export const findAllArticles = async (ctx) => {
-  const statement = 'SELECT * FROM articles';
-  await wantFindData(ctx, statement);
+  const statement = 'SELECT * FROM articles ORDER BY update_time DESC';
+  await wantFindData(ctx, statement); 
 }
