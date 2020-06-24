@@ -30,7 +30,7 @@ export const poolFn = (connectQuery, statements, parameter) => {
 // 查询数据
 function connecQueryFind(connection, statements) {
   　　return new Promise((resolve, reject) => {
-      console.log(statements, 'statements')
+      // console.log(statements, 'statements')
   　　　　connection.query(statements, (err, result) => {
   　　　　　　if(err) {
   　　　　　　　　throw err;
@@ -40,7 +40,7 @@ function connecQueryFind(connection, statements) {
             if(result.length > 0) {
               res.list = result;
               res.success = 'true';
-              console.log(result, 'resule')
+              // console.log(result, 'resule')
             }else{
               res.success = 'false'
             }

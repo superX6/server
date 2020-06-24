@@ -1,6 +1,6 @@
 import Router from 'koa-router'
 import {findUser, register, login} from '../api/user'
-import {createArticle, findAllArticles} from '../api/article';
+import {createArticle, findAllArticles, getrticle, deleteArticle} from '../api/article';
 
 
 const router = new Router();
@@ -14,6 +14,8 @@ router.post('/login', login)
 
 router.get('/articles', findAllArticles)
 router.post('/createArticle', createArticle)
+router.get('/getArticles', getrticle)
+router.get('/DeleteArticles', deleteArticle)
 
 router.post('/admin', (ctx, next) => {
   // console.log(ctx.request.body, 'ctx')
