@@ -7,7 +7,11 @@ export const createArticle = async (ctx) => {
 }
 
 export const findAllArticles = async (ctx) => {
-  const statement = 'SELECT * FROM articles ORDER BY update_time DESC';
+  const pageNo = ctx.request.query.pageNo || 1;
+  const limit = 10 * (pageNo - 1);
+  const offset = 10 * pageNo;
+  const statement = `SELECT * FROM articles ORDER BY update_time DESC limit ${limit}, ${offset}`;
+  console.log(statement, 'statement')
   await wantFindData(ctx, statement); 
 }
 
