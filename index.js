@@ -1,7 +1,7 @@
 /*
  * @Date: 2019-08-14 11:07:00
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2020-06-09 09:18:46
+ * @LastEditTime: 2020-07-03 18:18:52
  * @Description: 
  */
 const Koa = require('koa');
@@ -12,7 +12,7 @@ import {addBodyParser} from './middlerwares/common'
 ;(async () => {
   const app = new Koa()
   app.use(bodyParse())
-
+  app.use(require('koa-static')(__dirname + '/public'))
   app.use(router.routes()).use(router.allowedMethods());
 
   
